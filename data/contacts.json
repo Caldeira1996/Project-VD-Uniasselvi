@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Delegacia de Proteção à Mulher (DPCAMI)",
+    "phone": "(47) 3481-3628 / 3481-3629",
+    "address": "Rua Dr. Plácido Olímpio de Oliveira, 843 – Bucarein, Joinville – SC",
+    "site": ""
+  },
+  {
+    "name": "02ª Delegacia Regional de Polícia – Joinville",
+    "phone": "(47) 3481-2300",
+    "address": "Rua Blumenau, 2103 – América, Joinville – SC",
+    "site": ""
+  },
+  {
+    "name": "Central de Atendimento à Mulher (Ligue 180)",
+    "phone": "180 (24h)",
+    "address": "Atendimento nacional",
+    "site": ""
+  },
+  {
+    "name": "Disque Direitos Humanos (Disque 100)",
+    "phone": "Disque 100 (24h)",
+    "address": "Atendimento nacional",
+    "site": "https://www.gov.br/pt-br/servicos/denunciar-violacao-de-direitos-humanos"
+  },
+  {
+    "name": "Casa Abrigo Viva Rosa",
+    "phone": "(47) 3436-3534",
+    "address": "Sigilosa (atendimento especializado)",
+    "site": ""
+  },
+  {
+    "name": "CRAS Adhemar Garcia",
+    "phone": "(47) 3438-3636",
+    "address": "Ulysses Guimarães, Joinville – SC",
+    "site": ""
+  }
+]

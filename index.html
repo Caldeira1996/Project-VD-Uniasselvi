@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ConectaVD — Portal de Enfrentamento à Violência Doméstica</title>
+  <meta name="description" content="Informações, canais de denúncia e apoio às vítimas de violência doméstica.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="wrap nav">
+      <div class="brand" aria-label="ConectaVD">🟣 ConectaVD</div>
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#como">Como denunciar</a>
+        <a href="#acoes">Ações & Campanhas</a>
+        <a href="#materiais">Materiais</a>
+        <a href="#contatos">Contatos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Combate à Violência Doméstica</h1>
+      <p class="muted">Informações essenciais, canais de denúncia e contatos de apoio para vítimas e comunidade.</p>
+      <div class="cta">
+        <a class="btn primary" href="#como">Como denunciar</a>
+        <a class="btn secondary" href="tel:180">Ligar 180 (Central de Atendimento à Mulher)</a>
+        <a class="btn secondary" target="_blank" rel="noopener"
+          href="https://www.gov.br/mdh/pt-br/assuntos/violencia-contra-as-mulheres">
+          Portal do Governo (MDHC)
+        </a>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <h2>O que é violência doméstica?</h2>
+      <p>A violência doméstica vai além da agressão física: inclui violência psicológica, moral, patrimonial e sexual. A Lei Maria da Penha (Lei nº 11.340/2006) é um marco na proteção das mulheres no Brasil.</p>
+      <p class="muted small">Fonte: Lei 11.340/2006 (Maria da Penha).</p>
+    </section>
+
+    <section id="como">
+      <h2>Como denunciar</h2>
+      <ol>
+        <li><strong>Emergência imediata:</strong> Ligue 190 (Polícia Militar).</li>
+        <li><strong>Atendimento especializado:</strong> Ligue 180 (Central de Atendimento à Mulher).</li>
+        <li><strong>Violação de direitos humanos:</strong> Disque 100 (24h) ou Ouvidoria DH (Gov.br).</li>
+      </ol>
+      <div class="cta">
+        <a class="btn primary" href="tel:180">Ligar 180</a>
+        <a class="btn secondary" href="tel:190">Ligar 190</a>
+        <a class="btn secondary" target="_blank" rel="noopener"
+          href="https://www.gov.br/pt-br/servicos/denunciar-violacao-de-direitos-humanos">
+          Ouvidoria DH (on-line)
+        </a>
+      </div>
+    </section>
+
+    <section id="acoes">
+      <h2>Ações & Campanhas</h2>
+      <div id="event-list" class="list" aria-live="polite" aria-busy="true">
+        <!-- Populado via JS -->
+      </div>
+    </section>
+
+    <section id="materiais">
+      <h2>Materiais</h2>
+      <ul>
+        <li><a target="_blank" rel="noopener" href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm">Lei 11.340/2006 — Maria da Penha</a></li>
+        <li><a target="_blank" rel="noopener" href="https://www.gov.br/mdh/pt-br/assuntos/violencia-contra-as-mulheres">Portal MDHC — Violência contra as Mulheres</a></li>
+        <li><a target="_blank" rel="noopener" href="https://www.gov.br/pt-br/servicos/denunciar-violacao-de-direitos-humanos">Denúncia — Disque 100</a></li>
+      </ul>
+    </section>
+
+    <section id="contatos">
+      <h2>Contatos úteis</h2>
+      <ul id="contact-list" class="contacts">
+        <!-- Populado via JS -->
+      </ul>
+      <p class="muted">Este portal não coleta denúncias. Utilize os canais oficiais acima.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p><strong>ConectaVD</strong> — Projeto de Extensão acadêmico. Conteúdo informativo; não substitui orientação jurídica. Atualizado em <span id="dt"></span>.</p>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

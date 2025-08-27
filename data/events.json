@@ -1,0 +1,16 @@
+[
+  {
+    "type": "Campanha",
+    "title": "Agosto Lilás",
+    "date": "Agosto",
+    "place": "Todo o Brasil",
+    "summary": "Campanha nacional de enfrentamento à violência doméstica, em alusão à Lei Maria da Penha."
+  },
+  {
+    "type": "Ação Comunitária",
+    "title": "Roda de Conversa: Direitos das Mulheres",
+    "date": "Mensal",
+    "place": "Centro Comunitário",
+    "summary": "Atividade educativa para conscientizar sobre canais de apoio e denúncia."
+  }
+]
