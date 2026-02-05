@@ -3,27 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rede Protege — ECA, Conselho Tutelar e Ações Sociais</title>
+  <title>Rede Acolhe — Violência Doméstica: Informação, Apoio e Proteção</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0a0f1e; 
-      --card:#0f172a; 
-      --card-hover:#162036;
-      --text:#f1f5f9; 
-      --muted:#94a3b8;
-      --primary:#6366f1;
-      --primary-light:#818cf8;
-      --secondary:#22d3ee;
-      --accent:#f472b6;
-      --danger:#fb7185;
+      --bg:#1a0a10; 
+      --card:#1f0f15; 
+      --card-hover:#2a151c;
+      --text:#fff5f7; 
+      --muted:#c9a3ad;
+      --primary:#e11d48;
+      --primary-light:#fb7185;
+      --secondary:#f472b6;
+      --accent:#a855f7;
+      --danger:#ff4d6d;
       --success:#4ade80;
       --warning:#fbbf24;
+      --hope:#22d3ee;
       --stroke:rgba(255,255,255,.08);
-      --glow-primary: rgba(99, 102, 241, 0.4);
-      --glow-secondary: rgba(34, 211, 238, 0.3);
+      --glow-primary: rgba(225, 29, 72, 0.4);
+      --glow-secondary: rgba(244, 114, 182, 0.3);
     }
     
     *{box-sizing:border-box; margin:0; padding:0}
@@ -44,9 +45,9 @@
       position:fixed;
       top:0; left:0; right:0; bottom:0;
       background: 
-        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(99,102,241,.25), transparent 50%),
-        radial-gradient(ellipse 60% 40% at 80% 10%, rgba(34,211,238,.2), transparent 50%),
-        radial-gradient(ellipse 50% 30% at 50% 100%, rgba(244,114,182,.15), transparent 50%);
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(225,29,72,.2), transparent 50%),
+        radial-gradient(ellipse 60% 40% at 80% 10%, rgba(244,114,182,.15), transparent 50%),
+        radial-gradient(ellipse 50% 30% at 50% 100%, rgba(168,85,247,.12), transparent 50%);
       pointer-events:none;
       z-index:-1;
       animation: bgPulse 8s ease-in-out infinite alternate;
@@ -95,7 +96,7 @@
     header{
       position:sticky; top:0; 
       backdrop-filter: blur(20px);
-      background: rgba(10,15,30,.75);
+      background: rgba(26,10,16,.85);
       border-bottom:1px solid var(--stroke);
       z-index:100;
       padding:12px 0;
@@ -116,14 +117,14 @@
     }
     
     .logo::before{
-      content:'🛡️';
+      content:'💜';
       font-size:24px;
       filter:drop-shadow(0 2px 4px rgba(0,0,0,.3));
     }
     
     @keyframes logoGlow{
       0%{box-shadow: 0 0 20px var(--glow-primary), 0 0 40px var(--glow-secondary)}
-      100%{box-shadow: 0 0 30px var(--glow-primary), 0 0 60px var(--glow-secondary), 0 0 80px rgba(99,102,241,.2)}
+      100%{box-shadow: 0 0 30px var(--glow-primary), 0 0 60px var(--glow-secondary), 0 0 80px rgba(225,29,72,.2)}
     }
     
     .brand-text h1{
@@ -184,7 +185,7 @@
       padding:32px;
       border:1px solid var(--stroke);
       border-radius:28px;
-      background: linear-gradient(180deg, rgba(15,23,42,.9), rgba(15,23,42,.6));
+      background: linear-gradient(180deg, rgba(31,15,21,.9), rgba(31,15,21,.6));
       box-shadow: 
         0 25px 50px rgba(0,0,0,.4),
         inset 0 1px 0 rgba(255,255,255,.05);
@@ -227,8 +228,8 @@
     .dot{
       width:10px; height:10px;
       border-radius:999px;
-      background:var(--success);
-      box-shadow:0 0 20px rgba(74,222,128,.7);
+      background:var(--primary);
+      box-shadow:0 0 20px rgba(225,29,72,.7);
       animation: pulse 2s ease-in-out infinite;
     }
     
@@ -247,7 +248,7 @@
     }
     
     .hero h2 .highlight{
-      background: linear-gradient(90deg, var(--secondary), var(--accent));
+      background: linear-gradient(90deg, var(--primary-light), var(--secondary));
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
@@ -315,13 +316,23 @@
       transform:translateY(-3px);
     }
     
+    .btn.emergency{
+      background: linear-gradient(135deg, #dc2626, #ef4444);
+      animation: emergencyPulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes emergencyPulse{
+      0%, 100%{box-shadow: 0 8px 24px rgba(220,38,38,.4)}
+      50%{box-shadow: 0 8px 32px rgba(220,38,38,.6), 0 0 60px rgba(220,38,38,.3)}
+    }
+    
     /* Alert Box */
     .alert{
       margin-top:20px;
       padding:16px 18px;
       border-radius:16px;
-      border:1px solid rgba(251,113,133,.4);
-      background: linear-gradient(135deg, rgba(251,113,133,.12), rgba(251,113,133,.05));
+      border:1px solid rgba(220,38,38,.5);
+      background: linear-gradient(135deg, rgba(220,38,38,.15), rgba(220,38,38,.08));
       color:var(--text);
       font-size:13px;
       line-height:1.6;
@@ -346,6 +357,13 @@
     
     .alert b{color:var(--danger)}
     
+    .alert.hope{
+      border-color:rgba(34,211,238,.4);
+      background: linear-gradient(135deg, rgba(34,211,238,.12), rgba(34,211,238,.05));
+    }
+    
+    .alert.hope b{color:var(--hope)}
+    
     /* Feature Grid */
     .grid{
       display:grid;
@@ -363,7 +381,7 @@
       padding:20px;
       border-radius:20px;
       border:1px solid var(--stroke);
-      background: rgba(15,23,42,.7);
+      background: rgba(31,15,21,.7);
       backdrop-filter:blur(10px);
       transition: all .4s ease;
       position:relative;
@@ -383,7 +401,7 @@
     
     .card:hover{
       transform:translateY(-5px);
-      border-color:rgba(99,102,241,.3);
+      border-color:rgba(225,29,72,.3);
       box-shadow: 0 20px 40px rgba(0,0,0,.3);
     }
     
@@ -422,8 +440,8 @@
     .icon{
       width:28px; height:28px;
       border-radius:8px;
-      background: linear-gradient(135deg, rgba(99,102,241,.2), rgba(34,211,238,.2));
-      border:1px solid rgba(99,102,241,.3);
+      background: linear-gradient(135deg, rgba(225,29,72,.2), rgba(244,114,182,.2));
+      border:1px solid rgba(225,29,72,.3);
       display:grid;
       place-items:center;
       font-size:12px;
@@ -432,12 +450,12 @@
     
     /* Objective Card */
     .objective-card{
-      background: linear-gradient(180deg, rgba(99,102,241,.1), rgba(15,23,42,.8));
-      border:1px solid rgba(99,102,241,.2);
+      background: linear-gradient(180deg, rgba(225,29,72,.1), rgba(31,15,21,.8));
+      border:1px solid rgba(225,29,72,.2);
     }
     
     .objective-card h3{
-      color:var(--secondary);
+      color:var(--primary-light);
       font-size:16px;
     }
     
@@ -457,7 +475,7 @@
     
     .pill:hover{
       background:rgba(255,255,255,.06);
-      border-color:rgba(99,102,241,.3);
+      border-color:rgba(225,29,72,.3);
     }
     
     /* Sections */
@@ -495,6 +513,9 @@
     .cols{display:grid; grid-template-columns:1fr 1fr; gap:20px}
     @media (max-width: 920px){ .cols{grid-template-columns:1fr} }
     
+    .cols-3{display:grid; grid-template-columns:repeat(3, 1fr); gap:20px}
+    @media (max-width: 920px){ .cols-3{grid-template-columns:1fr} }
+    
     /* Lists */
     .list{
       margin:0;
@@ -526,44 +547,23 @@
       transform:translateX(5px);
     }
     
-    /* Conselho Tutelar Section with Image */
-    .conselho-section{
-      position:relative;
-      overflow:visible;
-    }
-    
-    .conselho-header{
-      display:flex;
-      align-items:center;
-      gap:20px;
-      margin-bottom:24px;
-      flex-wrap:wrap;
-    }
-    
-    .conselho-logo{
-      height:60px;
-      filter:drop-shadow(0 4px 12px rgba(0,0,0,.3));
-      transition:transform .3s ease;
-    }
-    
-    .conselho-logo:hover{transform:scale(1.05)}
-    
-    .conselho-image-container{
+    /* Image containers */
+    .image-container{
       margin:32px 0;
       padding:24px;
       border-radius:24px;
-      background: linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border:1px solid var(--stroke);
+      background: linear-gradient(135deg, rgba(225,29,72,.08), rgba(31,15,21,.9));
+      border:1px solid rgba(225,29,72,.2);
       position:relative;
       overflow:hidden;
     }
     
-    .conselho-image-container::before{
+    .image-container::before{
       content:'';
       position:absolute;
       top:-50%; left:-50%;
       width:200%; height:200%;
-      background: radial-gradient(circle at center, rgba(34,211,238,.1) 0%, transparent 50%);
+      background: radial-gradient(circle at center, rgba(225,29,72,.1) 0%, transparent 50%);
       animation: rotateGlow 20s linear infinite;
     }
     
@@ -572,7 +572,7 @@
       to{transform:rotate(360deg)}
     }
     
-    .conselho-image{
+    .section-image{
       width:100%;
       max-width:700px;
       height:auto;
@@ -581,11 +581,11 @@
       margin:0 auto;
       position:relative;
       z-index:1;
-      box-shadow: 0 20px 40px rgba(0,0,0,.3);
+      box-shadow: 0 20px 40px rgba(0,0,0,.4);
       transition:transform .4s ease;
     }
     
-    .conselho-image:hover{transform:scale(1.02)}
+    .section-image:hover{transform:scale(1.02)}
     
     .image-caption{
       text-align:center;
@@ -597,49 +597,137 @@
       z-index:1;
     }
     
-    /* ECA Banner */
-    .eca-banner-container{
-      margin:0 0 28px;
-      padding:24px;
-      border-radius:24px;
-      background: linear-gradient(135deg, rgba(34,211,238,.08), rgba(99,102,241,.08));
-      border:1px solid rgba(34,211,238,.2);
-      position:relative;
-      overflow:hidden;
+    /* Types of Violence Section */
+    .violence-types{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:16px;
+      margin-top:20px;
     }
     
-    .eca-banner-container::before{
-      content:'';
-      position:absolute;
-      top:-50%; right:-50%;
-      width:200%; height:200%;
-      background: radial-gradient(circle at center, rgba(34,211,238,.08) 0%, transparent 50%);
-      animation: rotateGlow 25s linear infinite reverse;
-    }
+    @media (max-width: 768px){ .violence-types{grid-template-columns:1fr} }
     
-    .eca-banner{
-      width:100%;
-      max-width:500px;
-      height:auto;
+    .violence-card{
+      padding:20px;
       border-radius:16px;
-      display:block;
-      margin:0 auto;
-      position:relative;
-      z-index:1;
-      box-shadow: 0 20px 40px rgba(0,0,0,.4);
-      transition:transform .4s ease;
+      border:1px solid var(--stroke);
+      background: rgba(31,15,21,.6);
+      transition:all .3s ease;
     }
     
-    .eca-banner:hover{transform:scale(1.02)}
-    
-    /* Dark theme image container */
-    .conselho-image-container.dark-theme{
-      background: linear-gradient(135deg, rgba(15,23,42,.9), rgba(30,41,59,.7));
-      border-color: rgba(99,102,241,.2);
+    .violence-card:hover{
+      border-color:rgba(225,29,72,.3);
+      transform:translateY(-3px);
     }
     
-    .conselho-image-container.dark-theme::before{
-      background: radial-gradient(circle at center, rgba(99,102,241,.1) 0%, transparent 50%);
+    .violence-card h4{
+      font-family:'Poppins', sans-serif;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:8px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    
+    .violence-card p{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+      margin:0;
+    }
+    
+    /* Emergency Numbers */
+    .emergency-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+      margin:24px 0;
+    }
+    
+    @media (max-width: 768px){ .emergency-grid{grid-template-columns:1fr} }
+    
+    .emergency-card{
+      padding:24px;
+      border-radius:20px;
+      text-align:center;
+      border:1px solid var(--stroke);
+      background: rgba(31,15,21,.6);
+      transition:all .3s ease;
+    }
+    
+    .emergency-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(225,29,72,.4);
+    }
+    
+    .emergency-card.primary{
+      background: linear-gradient(180deg, rgba(225,29,72,.15), rgba(31,15,21,.8));
+      border-color:rgba(225,29,72,.3);
+    }
+    
+    .emergency-number{
+      font-family:'Poppins', sans-serif;
+      font-size:42px;
+      font-weight:800;
+      background: linear-gradient(90deg, var(--primary-light), var(--secondary));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    
+    .emergency-card h4{
+      font-size:14px;
+      margin:8px 0 4px;
+      font-weight:700;
+    }
+    
+    .emergency-card p{
+      font-size:12px;
+      color:var(--muted);
+      margin:0;
+    }
+    
+    /* Stats Section */
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:16px;
+      margin:32px 0;
+    }
+    
+    @media (max-width: 768px){ .stats{grid-template-columns:repeat(2, 1fr)} }
+    
+    .stat-card{
+      text-align:center;
+      padding:24px 16px;
+      border-radius:20px;
+      background: linear-gradient(180deg, rgba(225,29,72,.1), rgba(31,15,21,.5));
+      border:1px solid var(--stroke);
+      transition:all .3s ease;
+    }
+    
+    .stat-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(225,29,72,.3);
+    }
+    
+    .stat-number{
+      font-family:'Poppins', sans-serif;
+      font-size:32px;
+      font-weight:800;
+      background: linear-gradient(90deg, var(--primary-light), var(--secondary));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    
+    .stat-label{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:4px;
+      text-transform:uppercase;
+      letter-spacing:.5px;
     }
     
     /* FAQ */
@@ -647,19 +735,19 @@
       border:1px solid var(--stroke);
       border-radius:16px;
       padding:0;
-      background: rgba(15,23,42,.6);
+      background: rgba(31,15,21,.6);
       margin-bottom:12px;
       overflow:hidden;
       transition:all .3s ease;
     }
     
     .faq details:hover{
-      border-color:rgba(99,102,241,.3);
+      border-color:rgba(225,29,72,.3);
     }
     
     .faq details[open]{
-      background: rgba(99,102,241,.05);
-      border-color:rgba(99,102,241,.3);
+      background: rgba(225,29,72,.05);
+      border-color:rgba(225,29,72,.3);
     }
     
     .faq summary{
@@ -714,8 +802,8 @@
     
     input:focus, textarea:focus, select:focus{
       border-color:var(--primary);
-      background:rgba(99,102,241,.05);
-      box-shadow: 0 0 0 3px rgba(99,102,241,.1);
+      background:rgba(225,29,72,.05);
+      box-shadow: 0 0 0 3px rgba(225,29,72,.1);
     }
     
     input::placeholder, textarea::placeholder{color:var(--muted)}
@@ -724,6 +812,98 @@
     
     select{cursor:pointer}
     select option{background:var(--card); color:var(--text)}
+    
+    /* Cycle of Violence */
+    .cycle-container{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+      margin-top:20px;
+    }
+    
+    @media (max-width: 768px){ .cycle-container{grid-template-columns:1fr} }
+    
+    .cycle-phase{
+      padding:24px;
+      border-radius:20px;
+      border:1px solid var(--stroke);
+      background: rgba(31,15,21,.6);
+      text-align:center;
+      position:relative;
+      transition:all .3s ease;
+    }
+    
+    .cycle-phase:hover{
+      transform:translateY(-5px);
+      border-color:rgba(225,29,72,.3);
+    }
+    
+    .cycle-phase::after{
+      content:'→';
+      position:absolute;
+      right:-24px;
+      top:50%;
+      transform:translateY(-50%);
+      font-size:24px;
+      color:var(--muted);
+    }
+    
+    .cycle-phase:last-child::after{display:none}
+    
+    @media (max-width: 768px){
+      .cycle-phase::after{
+        content:'↓';
+        right:50%;
+        top:auto;
+        bottom:-20px;
+        transform:translateX(50%);
+      }
+    }
+    
+    .cycle-number{
+      width:40px; height:40px;
+      border-radius:50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      margin:0 auto 12px;
+    }
+    
+    .cycle-phase h4{
+      font-family:'Poppins', sans-serif;
+      font-size:14px;
+      margin-bottom:8px;
+    }
+    
+    .cycle-phase p{
+      font-size:13px;
+      color:var(--muted);
+      margin:0;
+    }
+    
+    /* Testimonial */
+    .testimonial{
+      padding:24px;
+      border-radius:20px;
+      background: linear-gradient(135deg, rgba(34,211,238,.1), rgba(168,85,247,.1));
+      border:1px solid rgba(34,211,238,.2);
+      margin-top:24px;
+    }
+    
+    .testimonial-text{
+      font-size:15px;
+      line-height:1.7;
+      color:var(--text);
+      font-style:italic;
+    }
+    
+    .testimonial-author{
+      margin-top:12px;
+      font-size:13px;
+      color:var(--muted);
+    }
     
     /* Footer */
     footer{
@@ -755,46 +935,18 @@
     
     .footer-links a:hover{color:var(--secondary)}
     
-    /* Stats Section */
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:16px;
-      margin:32px 0;
+    /* Wave Divider */
+    .wave-divider{
+      height:60px;
+      margin:40px 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60'%3E%3Cpath fill='rgba(225,29,72,0.1)' d='M0,30 Q300,60 600,30 T1200,30 L1200,60 L0,60 Z'/%3E%3C/svg%3E") repeat-x;
+      background-size:1200px 60px;
+      animation: waveMove 10s linear infinite;
     }
     
-    @media (max-width: 768px){ .stats{grid-template-columns:repeat(2, 1fr)} }
-    
-    .stat-card{
-      text-align:center;
-      padding:24px 16px;
-      border-radius:20px;
-      background: linear-gradient(180deg, rgba(99,102,241,.1), rgba(15,23,42,.5));
-      border:1px solid var(--stroke);
-      transition:all .3s ease;
-    }
-    
-    .stat-card:hover{
-      transform:translateY(-5px);
-      border-color:rgba(99,102,241,.3);
-    }
-    
-    .stat-number{
-      font-family:'Poppins', sans-serif;
-      font-size:32px;
-      font-weight:800;
-      background: linear-gradient(90deg, var(--secondary), var(--accent));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
-    }
-    
-    .stat-label{
-      font-size:12px;
-      color:var(--muted);
-      margin-top:4px;
-      text-transform:uppercase;
-      letter-spacing:.5px;
+    @keyframes waveMove{
+      from{background-position-x:0}
+      to{background-position-x:1200px}
     }
     
     /* Scroll Animations */
@@ -823,40 +975,48 @@
     
     @media (max-width: 920px){ .mobile-menu-btn{display:block} }
     
-    /* Testimonial Card */
-    .testimonial{
+    /* Safety Plan Card */
+    .safety-plan{
+      background: linear-gradient(180deg, rgba(34,211,238,.1), rgba(31,15,21,.8));
+      border:1px solid rgba(34,211,238,.2);
       padding:24px;
       border-radius:20px;
-      background: linear-gradient(135deg, rgba(244,114,182,.1), rgba(99,102,241,.1));
-      border:1px solid rgba(244,114,182,.2);
-      margin-top:24px;
+      margin-top:20px;
     }
     
-    .testimonial-text{
-      font-size:15px;
-      line-height:1.7;
-      color:var(--text);
-      font-style:italic;
+    .safety-plan h3{
+      color:var(--hope);
+      display:flex;
+      align-items:center;
+      gap:10px;
     }
     
-    .testimonial-author{
-      margin-top:12px;
-      font-size:13px;
-      color:var(--muted);
+    .safety-checklist{
+      margin-top:16px;
     }
     
-    /* Wave Divider */
-    .wave-divider{
-      height:60px;
-      margin:40px 0;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60'%3E%3Cpath fill='rgba(99,102,241,0.1)' d='M0,30 Q300,60 600,30 T1200,30 L1200,60 L0,60 Z'/%3E%3C/svg%3E") repeat-x;
-      background-size:1200px 60px;
-      animation: waveMove 10s linear infinite;
+    .safety-checklist label{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:12px 16px;
+      border-radius:12px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.02);
+      margin-bottom:10px;
+      cursor:pointer;
+      transition:all .3s ease;
     }
     
-    @keyframes waveMove{
-      from{background-position-x:0}
-      to{background-position-x:1200px}
+    .safety-checklist label:hover{
+      background:rgba(34,211,238,.05);
+      border-color:rgba(34,211,238,.3);
+    }
+    
+    .safety-checklist input[type="checkbox"]{
+      width:20px;
+      height:20px;
+      accent-color:var(--hope);
     }
   </style>
 </head>
@@ -876,16 +1036,17 @@
       <div class="brand">
         <div class="logo"></div>
         <div class="brand-text">
-          <h1>Rede Protege</h1>
-          <span>ECA • Conselho Tutelar • Ações Sociais</span>
+          <h1>Rede Acolhe</h1>
+          <span>Violência Doméstica • Informação • Proteção</span>
         </div>
       </div>
       <nav>
-        <a href="#eca">📜 ECA</a>
-        <a href="#conselho">🏛️ Conselho Tutelar</a>
-        <a href="#ajuda">🆘 Pedir ajuda</a>
-        <a href="#acoes">💜 Ações</a>
-        <a href="#materiais">📚 Materiais</a>
+        <a href="#sobre">📖 Sobre</a>
+        <a href="#tipos">⚠️ Tipos</a>
+        <a href="#ciclo">🔄 Ciclo</a>
+        <a href="#ajuda">🆘 Ajuda</a>
+        <a href="#direitos">⚖️ Direitos</a>
+        <a href="#rede">🤝 Rede de Apoio</a>
         <a href="#contato">✉️ Contato</a>
       </nav>
       <button class="mobile-menu-btn">☰</button>
@@ -899,69 +1060,71 @@
         <div>
           <span class="kicker">
             <span class="dot"></span> 
-            Projeto extensionista — solução colaborativa de divulgação
+            Projeto extensionista — informação e acolhimento
           </span>
           
           <h2>
-            Informação e orientação para <span class="highlight">proteger crianças e adolescentes.</span>
+            Você <span class="highlight">não está sozinha.</span><br>
+            Existe saída e existe apoio.
           </h2>
           
           <p>
-            Este site reúne conteúdos sobre o <b>ECA</b> (Estatuto da Criança e do Adolescente), 
-            o papel do <b>Conselho Tutelar</b> e caminhos de apoio e denúncia,
-            além de uma área colaborativa para divulgar <b>ações sociais</b> na comunidade.
+            Este site oferece informações sobre <b>violência doméstica</b>, 
+            seus tipos, o ciclo da violência, seus direitos garantidos pela <b>Lei Maria da Penha</b>,
+            e os caminhos para buscar ajuda e proteção.
           </p>
 
           <div class="cta">
-            <button class="btn" onclick="document.querySelector('#ajuda').scrollIntoView({behavior:'smooth'})">
-              🆘 Como pedir ajuda
+            <button class="btn emergency" onclick="window.open('tel:180')">
+              📞 Ligue 180 — Central da Mulher
             </button>
-            <button class="btn secondary" onclick="document.querySelector('#acoes').scrollIntoView({behavior:'smooth'})">
-              💜 Ver ações e campanhas
+            <button class="btn secondary" onclick="document.querySelector('#ajuda').scrollIntoView({behavior:'smooth'})">
+              🆘 Ver todos os canais de ajuda
             </button>
           </div>
 
           <div class="alert">
-            <span class="alert-icon">⚠️</span>
+            <span class="alert-icon">🚨</span>
             <div>
-              <b>Atenção:</b> se houver risco imediato de vida, procure ajuda emergencial pelo <b>190</b> (Polícia) ou <b>192</b> (SAMU).
-              Este site é informativo e não substitui atendimento de emergência.
+              <b>Em perigo imediato?</b> Ligue <b>190</b> (Polícia) ou vá a uma delegacia.
+              Sua segurança é prioridade. Este site é informativo e não substitui atendimento emergencial.
             </div>
           </div>
 
           <div class="grid">
             <div class="card">
-              <span class="badge"><span class="icon">§</span> ECA</span>
-              <h3>Direitos garantidos</h3>
-              <p>Entenda os direitos fundamentais e o conceito de proteção integral.</p>
+              <span class="badge"><span class="icon">📖</span> Info</span>
+              <h3>O que é</h3>
+              <p>Entenda o que caracteriza violência doméstica e familiar.</p>
             </div>
             <div class="card">
-              <span class="badge"><span class="icon">🏛️</span> Conselho</span>
-              <h3>Quando acionar</h3>
-              <p>Saiba em quais situações buscar orientação e encaminhamento.</p>
+              <span class="badge"><span class="icon">⚠️</span> Tipos</span>
+              <h3>Reconheça</h3>
+              <p>Física, psicológica, sexual, patrimonial e moral.</p>
             </div>
             <div class="card">
-              <span class="badge"><span class="icon">📞</span> Ajuda</span>
-              <h3>Canais oficiais</h3>
-              <p>Contatos e caminhos para orientação e denúncia.</p>
+              <span class="badge"><span class="icon">⚖️</span> Lei</span>
+              <h3>Seus direitos</h3>
+              <p>Lei Maria da Penha e medidas protetivas.</p>
             </div>
             <div class="card">
-              <span class="badge"><span class="icon">❤️</span> Ações</span>
-              <h3>Rede colaborativa</h3>
-              <p>Divulgação de campanhas e eventos de proteção.</p>
+              <span class="badge"><span class="icon">💜</span> Apoio</span>
+              <h3>Rede de ajuda</h3>
+              <p>Serviços e canais de suporte disponíveis.</p>
             </div>
           </div>
         </div>
 
         <div class="card objective-card">
-          <h3>🎯 Objetivo do projeto</h3>
+          <h3>💜 Objetivo do projeto</h3>
           <p>
-            Disponibilizar uma solução colaborativa de divulgação para ampliar a adesão a ações sociais relacionadas
-            ao ECA e fortalecer a participação cidadã na proteção de crianças e adolescentes.
+            Fornecer informações claras e acessíveis sobre violência doméstica,
+            empoderando mulheres a reconhecerem situações de abuso e
+            conhecerem seus direitos e caminhos de proteção.
           </p>
-          <div class="pill">✅ Pesquisa aplicada • estudo de campo • prototipação</div>
-          <div class="pill">👥 Público: comunidade, responsáveis, educadores</div>
-          <div class="pill">🤝 Parceria com a rede de proteção local</div>
+          <div class="pill">📚 Informação é poder</div>
+          <div class="pill">🤝 Você não está sozinha</div>
+          <div class="pill">💪 Existe saída</div>
         </div>
       </div>
     </div>
@@ -969,111 +1132,151 @@
     <!-- Stats Section -->
     <div class="stats reveal">
       <div class="stat-card">
-        <div class="stat-number">30+</div>
-        <div class="stat-label">Anos do ECA</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">5.570</div>
-        <div class="stat-label">Municípios com CT</div>
+        <div class="stat-number">180</div>
+        <div class="stat-label">Central da Mulher</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">24h</div>
-        <div class="stat-label">Disque 100</div>
+        <div class="stat-label">Atendimento</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">100%</div>
-        <div class="stat-label">Gratuito</div>
+        <div class="stat-label">Gratuito e Sigiloso</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">17+</div>
+        <div class="stat-label">Anos da Lei Maria da Penha</div>
       </div>
     </div>
 
     <div class="wave-divider"></div>
 
-    <!-- ECA Section -->
-    <section id="eca" class="reveal">
-      <h2><span class="section-icon">📜</span> ECA — Estatuto da Criança e do Adolescente</h2>
-      
-      <!-- Banner ECA 25 Anos -->
-      <div class="eca-banner-container">
-        <img src="./assets/ECA-25-anos.png" 
-             alt="ECA 25 Anos - Estatuto da Criança e do Adolescente - Avanços e desafios para a infância e adolescência no Brasil - UNICEF" 
-             class="eca-banner">
-        <p class="image-caption">
-          🇧🇷 Celebrando mais de 30 anos de conquistas na proteção da infância brasileira
-        </p>
-      </div>
-      
+    <!-- Sobre Section -->
+    <section id="sobre" class="reveal">
+      <h2><span class="section-icon">📖</span> O que é Violência Doméstica?</h2>
       <div class="cols">
         <div class="card">
-          <h3>📖 O que é o ECA?</h3>
+          <h3>📋 Definição</h3>
           <p>
-            O <b>ECA</b> (Lei nº 8.069/1990) é a lei que assegura direitos e estabelece deveres de proteção à criança (até 12 anos) e ao adolescente (12 a 18 anos),
-            orientando <b>família, sociedade e Estado</b> a garantir dignidade, segurança e desenvolvimento pleno.
+            A <b>violência doméstica e familiar contra a mulher</b> é qualquer ação ou omissão baseada no gênero 
+            que cause morte, lesão, sofrimento físico, sexual ou psicológico e dano moral ou patrimonial,
+            no âmbito da unidade doméstica, da família ou em qualquer relação íntima de afeto.
           </p>
           <p style="margin-top:14px; font-size:13px; color:var(--muted)">
-            <b>📎 Referência:</b> Texto oficial no Portal do Planalto (Lei nº 8.069/1990).
+            <b>📎 Base legal:</b> Art. 5º da Lei nº 11.340/2006 (Lei Maria da Penha)
           </p>
         </div>
         <div class="card">
-          <h3>⚖️ Direitos fundamentais</h3>
+          <h3>👥 Quem pode ser vítima?</h3>
           <ul class="list">
-            <li>Direito à <b>vida, saúde, educação</b> e convivência familiar</li>
-            <li>Proteção contra <b>negligência, discriminação e violência</b></li>
-            <li><b>Prioridade absoluta</b> no atendimento e nas políticas públicas</li>
-            <li>Direito ao <b>lazer, cultura, esporte</b> e liberdade de expressão</li>
+            <li>Mulheres em <b>relacionamento atual ou anterior</b> (namoro, casamento, união estável)</li>
+            <li>Filhas, mães, irmãs e outras <b>parentes do agressor</b></li>
+            <li>Mulheres que <b>convivem ou conviveram</b> no mesmo ambiente doméstico</li>
+            <li><b>Independe de orientação sexual</b> — aplica-se a relacionamentos entre mulheres</li>
           </ul>
         </div>
       </div>
       
-      <div class="testimonial">
-        <p class="testimonial-text">
-          "A criança e o adolescente gozam de todos os direitos fundamentais inerentes à pessoa humana, 
-          assegurando-se-lhes todas as oportunidades e facilidades, a fim de lhes facultar o desenvolvimento 
-          físico, mental, moral, espiritual e social, em condições de liberdade e de dignidade."
-        </p>
-        <p class="testimonial-author">— Art. 3º do ECA (Lei nº 8.069/1990)</p>
+      <div class="alert hope" style="margin-top:20px">
+        <span>💡</span>
+        <div>
+          <b>Importante:</b> A violência doméstica não escolhe classe social, raça, religião ou nível de escolaridade. 
+          Pode acontecer com qualquer mulher. Reconhecer é o primeiro passo para buscar ajuda.
+        </div>
       </div>
     </section>
 
-    <!-- Conselho Tutelar Section -->
-    <section id="conselho" class="conselho-section reveal">
-      <div class="conselho-header">
-        <h2><span class="section-icon">🏛️</span> Conselho Tutelar — como funciona</h2>
-        <img src="./assets/Conselho_Tutelar.png" 
-             alt="Logo do Conselho Tutelar" 
-             class="conselho-logo"
-             onerror="this.style.display='none'">
-      </div>
+    <!-- Tipos de Violência -->
+    <section id="tipos" class="reveal">
+      <h2><span class="section-icon">⚠️</span> Tipos de Violência Doméstica</h2>
+      <p style="color:var(--muted); margin-bottom:20px">
+        A Lei Maria da Penha reconhece cinco formas de violência doméstica. Muitas vezes, mais de um tipo acontece ao mesmo tempo.
+      </p>
       
-      <!-- Imagem do Conselho Tutelar -->
-      <div class="conselho-image-container dark-theme">
-        <img src="./assets/Conselho_Tutelar.png" 
-             alt="Conselho Tutelar - Proteção de crianças e adolescentes" 
-             class="conselho-image">
-        <p class="image-caption">
-          ⚖️ Conselho Tutelar — Órgão permanente e autônomo de proteção aos direitos da criança e do adolescente
-        </p>
-      </div>
-      
-      <div class="cols">
-        <div class="card">
-          <h3>🛡️ O que o Conselho Tutelar faz</h3>
-          <ul class="list">
-            <li>Atende situações de <b>risco</b> e aplica <b>medidas de proteção</b></li>
-            <li>Encaminha para serviços (saúde, escola, assistência social, justiça)</li>
-            <li>Articula a <b>rede de proteção</b> do município</li>
-            <li>Orienta famílias sobre direitos e deveres</li>
-            <li>Fiscaliza entidades de atendimento</li>
-          </ul>
+      <div class="violence-types">
+        <div class="violence-card">
+          <h4>👊 Violência Física</h4>
+          <p>
+            Qualquer conduta que ofenda a integridade ou saúde corporal: 
+            empurrões, tapas, socos, chutes, queimaduras, estrangulamento, 
+            uso de armas ou objetos, entre outros.
+          </p>
         </div>
-        <div class="card">
-          <h3>🚨 Quando acionar o CT</h3>
-          <ul class="list">
-            <li>Suspeita de <b>maus-tratos, negligência ou abandono</b></li>
-            <li><b>Evasão escolar</b> por risco ou falta de cuidados</li>
-            <li>Exploração, <b>violência psicológica, física ou sexual</b></li>
-            <li>Criança ou adolescente em situação de rua</li>
-            <li><b>Trabalho infantil</b> ou exploração econômica</li>
-          </ul>
+        <div class="violence-card">
+          <h4>🧠 Violência Psicológica</h4>
+          <p>
+            Condutas que causem dano emocional: ameaças, humilhações, 
+            isolamento, vigilância constante, perseguição, insultos, 
+            chantagem, manipulação, limitação do direito de ir e vir.
+          </p>
+        </div>
+        <div class="violence-card">
+          <h4>⚠️ Violência Sexual</h4>
+          <p>
+            Qualquer conduta que constranja a presenciar, manter ou participar 
+            de relação sexual não desejada: estupro (mesmo no casamento), 
+            impedir uso de métodos contraceptivos, forçar aborto ou gravidez.
+          </p>
+        </div>
+        <div class="violence-card">
+          <h4>💰 Violência Patrimonial</h4>
+          <p>
+            Condutas que configurem retenção, subtração ou destruição de bens, 
+            documentos, instrumentos de trabalho, ou recursos econômicos.
+          </p>
+        </div>
+        <div class="violence-card" style="grid-column: span 2">
+          <h4>📢 Violência Moral</h4>
+          <p>
+            Condutas que configurem calúnia (acusar falsamente de crime), 
+            difamação (atribuir fatos ofensivos) ou injúria (ofender a dignidade). 
+            Inclui exposição nas redes sociais, divulgação de fotos íntimas, 
+            e comentários depreciativos sobre a vítima.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ciclo da Violência -->
+    <section id="ciclo" class="reveal">
+      <h2><span class="section-icon">🔄</span> O Ciclo da Violência</h2>
+      <p style="color:var(--muted); margin-bottom:10px">
+        A violência doméstica geralmente segue um padrão cíclico, o que dificulta a saída da situação. Entender esse ciclo é fundamental.
+      </p>
+      
+      <div class="cycle-container">
+        <div class="cycle-phase">
+          <div class="cycle-number">1</div>
+          <h4>😤 Tensão</h4>
+          <p>
+            O agressor fica tenso, irritado. Surgem discussões, 
+            insultos, ameaças veladas. A vítima tenta acalmar a situação.
+          </p>
+        </div>
+        <div class="cycle-phase">
+          <div class="cycle-number">2</div>
+          <h4>💥 Explosão</h4>
+          <p>
+            A violência acontece de forma intensa: agressões físicas, 
+            verbais, sexuais. É o momento de maior perigo.
+          </p>
+        </div>
+        <div class="cycle-phase">
+          <div class="cycle-number">3</div>
+          <h4>🌹 Lua de Mel</h4>
+          <p>
+            O agressor se arrepende, pede perdão, faz promessas de mudança, 
+            dá presentes. A vítima acredita e o ciclo recomeça.
+          </p>
+        </div>
+      </div>
+      
+      <div class="alert hope" style="margin-top:24px">
+        <span>💜</span>
+        <div>
+          <b>O ciclo tende a se repetir e se intensificar.</b> Com o tempo, a fase de "lua de mel" 
+          pode desaparecer e as agressões se tornarem mais frequentes e graves. 
+          Buscar ajuda pode interromper esse ciclo.
         </div>
       </div>
     </section>
@@ -1082,99 +1285,210 @@
 
     <!-- Ajuda Section -->
     <section id="ajuda" class="reveal">
-      <h2><span class="section-icon">🆘</span> Como pedir ajuda / denunciar</h2>
+      <h2><span class="section-icon">🆘</span> Como pedir ajuda</h2>
+      
+      <div class="emergency-grid">
+        <div class="emergency-card primary">
+          <div class="emergency-number">180</div>
+          <h4>Central de Atendimento à Mulher</h4>
+          <p>24h • Gratuito • Sigiloso<br>Também via WhatsApp</p>
+        </div>
+        <div class="emergency-card">
+          <div class="emergency-number">190</div>
+          <h4>Polícia Militar</h4>
+          <p>Emergência • Risco imediato<br>Disponível 24 horas</p>
+        </div>
+        <div class="emergency-card">
+          <div class="emergency-number">197</div>
+          <h4>Polícia Civil</h4>
+          <p>Delegacia • Registro de B.O.<br>Delegacia da Mulher</p>
+        </div>
+      </div>
+      
       <div class="cols">
         <div class="card">
-          <h3>📞 Canais oficiais de denúncia</h3>
+          <h3>📍 Onde buscar ajuda presencial</h3>
           <ul class="list">
-            <li><b style="color:var(--success)">Disque 100</b> — violações de direitos humanos (inclui crianças e adolescentes), <b>24h, gratuito</b></li>
-            <li><b style="color:var(--accent)">Ligue 180</b> — atendimento à mulher, <b>24h, gratuito</b></li>
-            <li><b style="color:var(--danger)">Emergência: 190</b> — risco imediato (Polícia Militar)</li>
-            <li><b style="color:var(--warning)">SAMU: 192</b> — emergências médicas</li>
-            <li><b style="color:var(--secondary)">CVV: 188</b> — apoio emocional e prevenção do suicídio</li>
+            <li><b>Delegacia da Mulher (DEAM)</b> — atendimento especializado 24h</li>
+            <li><b>Qualquer Delegacia</b> — caso não haja DEAM na sua cidade</li>
+            <li><b>CRAS / CREAS</b> — assistência social e encaminhamentos</li>
+            <li><b>Defensoria Pública</b> — orientação jurídica gratuita</li>
+            <li><b>UBS / Hospital</b> — atendimento médico e registro de lesões</li>
+            <li><b>Casa da Mulher Brasileira</b> — atendimento integrado</li>
           </ul>
-          <div class="alert" style="margin-top:16px">
-            <span>💡</span>
-            <div><b>Dica de segurança:</b> Se você estiver em perigo, priorize um local seguro e um canal de emergência. A denúncia pode ser anônima.</div>
-          </div>
         </div>
         <div class="card">
           <h3>📝 Formulário de orientação</h3>
           <p style="font-size:13px; color:var(--muted); margin-bottom:16px">
             (Simulado para apresentação do TCC)
           </p>
-          <form onsubmit="event.preventDefault(); alert('✅ Mensagem registrada (modo demonstração).\n\nEm um sistema real, isso seria encaminhado com segurança e sigilo para a rede de proteção.');">
+          <form onsubmit="event.preventDefault(); alert('✅ Mensagem registrada (modo demonstração).\n\nEm um sistema real, isso seria encaminhado com segurança e sigilo.');">
             <input placeholder="Nome (opcional)" />
             <select>
               <option value="">Tipo de solicitação</option>
-              <option>Orientação sobre direitos</option>
-              <option>Denúncia (encaminhamento)</option>
-              <option>Quero participar de ação social</option>
-              <option>Dúvidas sobre o Conselho Tutelar</option>
+              <option>Preciso de orientação</option>
+              <option>Quero informações sobre medida protetiva</option>
+              <option>Conheço alguém que precisa de ajuda</option>
+              <option>Quero ser voluntária na rede de apoio</option>
             </select>
-            <textarea placeholder="Descreva o que você precisa (sem dados sensíveis na demonstração)."></textarea>
-            <button class="btn" type="submit">📨 Enviar solicitação</button>
+            <textarea placeholder="Descreva sua situação ou dúvida (sem dados sensíveis na demonstração)."></textarea>
+            <button class="btn" type="submit">📨 Enviar</button>
           </form>
-          <p style="color:var(--muted); font-size:11px; margin-top:12px">
-            * Em produção: LGPD, sigilo, autenticação segura e encaminhamento responsável.
-          </p>
+        </div>
+      </div>
+      
+      <!-- Plano de Segurança -->
+      <div class="safety-plan">
+        <h3>🛡️ Plano de Segurança — Prepare-se</h3>
+        <p style="color:var(--muted); font-size:14px;">
+          Se você está em situação de violência e planeja sair, considere preparar:
+        </p>
+        <div class="safety-checklist">
+          <label>
+            <input type="checkbox">
+            <span>Documentos importantes (RG, CPF, certidões) em local seguro ou cópias com pessoa de confiança</span>
+          </label>
+          <label>
+            <input type="checkbox">
+            <span>Dinheiro reserva guardado em local secreto</span>
+          </label>
+          <label>
+            <input type="checkbox">
+            <span>Roupas e itens essenciais em uma bolsa de fácil acesso</span>
+          </label>
+          <label>
+            <input type="checkbox">
+            <span>Lista de telefones de emergência memorizada ou anotada</span>
+          </label>
+          <label>
+            <input type="checkbox">
+            <span>Combinar sinais de alerta com vizinhos ou familiares</span>
+          </label>
+          <label>
+            <input type="checkbox">
+            <span>Identificar um local seguro para ir em caso de emergência</span>
+          </label>
         </div>
       </div>
     </section>
 
-    <!-- Ações Section -->
-    <section id="acoes" class="reveal">
-      <h2><span class="section-icon">💜</span> Ações e campanhas (colaborativo)</h2>
+    <!-- Direitos Section -->
+    <section id="direitos" class="reveal">
+      <h2><span class="section-icon">⚖️</span> Seus Direitos — Lei Maria da Penha</h2>
+      
       <div class="cols">
         <div class="card">
-          <h3>📅 Exemplos de ações na comunidade</h3>
+          <h3>📜 O que é a Lei Maria da Penha?</h3>
+          <p>
+            A <b>Lei nº 11.340/2006</b>, conhecida como Lei Maria da Penha, é uma das leis mais avançadas 
+            do mundo no combate à violência doméstica contra a mulher. Ela cria mecanismos para coibir 
+            e prevenir a violência, além de estabelecer medidas de assistência e proteção às vítimas.
+          </p>
+          <p style="margin-top:14px;">
+            A lei recebeu esse nome em homenagem a <b>Maria da Penha Maia Fernandes</b>, 
+            que lutou por mais de 20 anos para ver seu agressor condenado.
+          </p>
+        </div>
+        <div class="card">
+          <h3>🛡️ Medidas Protetivas</h3>
           <ul class="list">
-            <li>🎤 Campanha <b>"Conheça o ECA"</b> — palestra em escola/comunidade</li>
-            <li>🤝 <b>Mutirão de orientação</b>: rede de apoio (CRAS/CREAS, saúde, escola)</li>
-            <li>📦 <b>Arrecadação</b> para projetos sociais locais</li>
-            <li>🎨 <b>Oficinas culturais</b> para crianças e adolescentes</li>
-            <li>📢 <b>Campanhas de conscientização</b> nas redes sociais</li>
+            <li><b>Afastamento do agressor</b> do lar ou local de convivência</li>
+            <li><b>Proibição de aproximação</b> da vítima e familiares</li>
+            <li><b>Proibição de contato</b> por qualquer meio</li>
+            <li><b>Restrição de visitas</b> aos filhos menores</li>
+            <li><b>Prestação de alimentos provisionais</b></li>
+            <li><b>Suspensão de porte de armas</b> do agressor</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="cols" style="margin-top:20px">
+        <div class="card">
+          <h3>✅ Como solicitar medida protetiva</h3>
+          <ul class="list">
+            <li>Vá a uma <b>Delegacia</b> (preferencialmente da Mulher) e registre a ocorrência</li>
+            <li>Solicite a <b>medida protetiva</b> no momento do registro</li>
+            <li>O pedido será enviado ao <b>juiz em até 48 horas</b></li>
+            <li>A medida pode ser concedida <b>sem ouvir o agressor</b></li>
+            <li>Não precisa de advogado, mas a <b>Defensoria Pública</b> pode ajudar</li>
           </ul>
         </div>
         <div class="card">
-          <h3>➕ Cadastrar uma ação</h3>
-          <p style="font-size:13px; color:var(--muted); margin-bottom:16px">
-            (Demonstração para o TCC)
-          </p>
-          <form onsubmit="event.preventDefault(); alert('✅ Ação cadastrada com sucesso! (modo demonstração)');">
-            <input placeholder="Nome da ação" required />
-            <input placeholder="Local (bairro/cidade)" required />
-            <input type="date" required />
-            <textarea placeholder="Descrição da ação e como participar"></textarea>
-            <button class="btn" type="submit">📌 Cadastrar ação</button>
-          </form>
+          <h3>👩‍⚖️ Outros direitos garantidos</h3>
+          <ul class="list">
+            <li><b>Atendimento policial especializado</b> e humanizado</li>
+            <li>Acesso à <b>justiça gratuita</b> (Defensoria Pública)</li>
+            <li><b>Assistência social</b> e acompanhamento psicológico</li>
+            <li><b>Abrigo temporário</b> em casos de risco</li>
+            <li>Manutenção do <b>vínculo empregatício</b> por até 6 meses</li>
+            <li><b>Prioridade na matrícula</b> dos filhos em escola</li>
+          </ul>
         </div>
+      </div>
+      
+      <div class="testimonial">
+        <p class="testimonial-text">
+          "Toda mulher, independentemente de classe, raça, etnia, orientação sexual, renda, cultura, 
+          nível educacional, idade e religião, goza dos direitos fundamentais inerentes à pessoa humana, 
+          sendo-lhe asseguradas as oportunidades e facilidades para viver sem violência."
+        </p>
+        <p class="testimonial-author">— Art. 2º da Lei Maria da Penha (Lei nº 11.340/2006)</p>
       </div>
     </section>
 
     <div class="wave-divider"></div>
 
-    <!-- Materiais Section -->
-    <section id="materiais" class="reveal">
-      <h2><span class="section-icon">📚</span> Materiais e links úteis</h2>
+    <!-- Rede de Apoio Section -->
+    <section id="rede" class="reveal">
+      <h2><span class="section-icon">🤝</span> Rede de Apoio</h2>
+      
       <div class="cols">
         <div class="card">
-          <h3>✅ Checklist rápido</h3>
+          <h3>🏛️ Serviços Especializados</h3>
           <ul class="list">
-            <li>Reconhecer <b>sinais de violação</b> e buscar orientação</li>
-            <li>Guardar informações essenciais (sem se expor a risco)</li>
-            <li>Acionar <b>canais oficiais</b> conforme o caso</li>
-            <li>Acompanhar o <b>encaminhamento</b> quando possível</li>
-            <li>Participar de <b>ações comunitárias</b> de prevenção</li>
+            <li><b>Casa da Mulher Brasileira</b> — atendimento integrado (segurança, justiça, saúde)</li>
+            <li><b>Centro de Referência da Mulher</b> — acolhimento e orientação</li>
+            <li><b>Casas-Abrigo</b> — proteção temporária em casos de risco</li>
+            <li><b>Núcleos de Atendimento à Mulher</b> — nas Defensorias Públicas</li>
+            <li><b>Juizados de Violência Doméstica</b> — atendimento judicial especializado</li>
           </ul>
         </div>
         <div class="card">
-          <h3>🔗 Links importantes</h3>
+          <h3>📱 Aplicativos e Ferramentas</h3>
           <ul class="list">
-            <li>📜 <a href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank" style="color:var(--secondary)">Texto do ECA</a> — Lei nº 8.069/1990 (Portal do Planalto)</li>
-            <li>📞 <a href="https://www.gov.br/mdh/pt-br/ondh/disque-100" target="_blank" style="color:var(--secondary)">Disque 100</a> — Serviço oficial do Governo Federal</li>
-            <li>💜 <a href="https://www.gov.br/mdh/pt-br/ligue-180" target="_blank" style="color:var(--secondary)">Ligue 180</a> — Central de Atendimento à Mulher</li>
-            <li>🏛️ <a href="https://www.gov.br/mdh/pt-br" target="_blank" style="color:var(--secondary)">MDHC</a> — Ministério dos Direitos Humanos</li>
+            <li><b>Clique 180</b> — app oficial para denúncias</li>
+            <li><b>PenhaS</b> — rede de proteção e mapeamento de serviços</li>
+            <li><b>Mete a Colher</b> — conexão com rede de apoio</li>
+            <li><b>Juntas</b> — assistente virtual de orientação</li>
+          </ul>
+          <p style="margin-top:14px; font-size:13px; color:var(--muted)">
+            ⚠️ <b>Dica de segurança:</b> Se o agressor monitora seu celular, acesse os serviços 
+            de um telefone seguro ou computador público.
+          </p>
+        </div>
+      </div>
+      
+      <div class="cols" style="margin-top:20px">
+        <div class="card">
+          <h3>👥 Como ajudar alguém</h3>
+          <ul class="list">
+            <li><b>Escute sem julgar</b> — acredite no relato dela</li>
+            <li><b>Não pressione</b> para que ela tome decisões</li>
+            <li><b>Ofereça apoio prático</b> — um lugar seguro, ajuda com filhos</li>
+            <li><b>Informe sobre os canais</b> de ajuda disponíveis</li>
+            <li><b>Respeite o tempo dela</b> — sair de uma relação abusiva é um processo</li>
+            <li><b>Mantenha contato</b> — o isolamento é uma estratégia do agressor</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>⚠️ Sinais de alerta</h3>
+          <ul class="list">
+            <li>Mudanças de comportamento (medo, ansiedade, isolamento)</li>
+            <li>Marcas físicas ou justificativas suspeitas para lesões</li>
+            <li>Controle excessivo do parceiro (roupas, amizades, dinheiro)</li>
+            <li>Afastamento de família e amigos</li>
+            <li>Desculpar ou minimizar comportamentos do parceiro</li>
+            <li>Medo de contrariar ou desagradar o parceiro</li>
           </ul>
         </div>
       </div>
@@ -1184,34 +1498,52 @@
     <section class="faq reveal">
       <h2><span class="section-icon">❓</span> Perguntas frequentes</h2>
       <details>
-        <summary>O Conselho Tutelar é polícia?</summary>
+        <summary>A Lei Maria da Penha só protege mulheres casadas?</summary>
         <p class="answer">
-          <b>Não.</b> O Conselho Tutelar é um órgão <b>administrativo, não policial</b>. Sua função é de <b>proteção e encaminhamento</b>, 
-          atuando na articulação da rede local para garantir direitos de crianças e adolescentes. 
-          Não tem poder de prender ou investigar crimes.
+          <b>Não.</b> A lei protege mulheres em qualquer relação íntima de afeto: 
+          namoro, união estável, casamento (atual ou passado), e também relações familiares. 
+          Não é necessário morar junto ou ter filhos em comum.
         </p>
       </details>
       <details>
-        <summary>Posso denunciar mesmo sem "provas"?</summary>
+        <summary>Posso pedir medida protetiva sem registrar B.O.?</summary>
         <p class="answer">
-          <b>Sim!</b> Você pode buscar orientação e relatar uma <b>suspeita</b>. Os órgãos competentes irão avaliar e encaminhar o caso. 
-          A denúncia pode ser <b>anônima</b> pelo Disque 100. Não é necessário ter certeza absoluta para proteger uma criança.
+          Em geral, o registro do B.O. é necessário para o pedido de medida protetiva. 
+          Porém, em situações de urgência extrema, o juiz pode conceder a medida e depois 
+          solicitar as informações complementares. O ideal é procurar uma delegacia.
         </p>
       </details>
       <details>
-        <summary>Qual canal uso para violência contra criança/adolescente?</summary>
+        <summary>Se eu denunciar, vou ter que sair de casa?</summary>
         <p class="answer">
-          O <b style="color:var(--success)">Disque 100</b> é o principal canal para denúncias de violações de direitos humanos de crianças e adolescentes. 
-          Funciona <b>24 horas, 7 dias por semana</b>, e a ligação é <b>gratuita</b>. 
-          Em caso de risco imediato de vida, ligue <b>190</b> (Polícia).
+          <b>Não necessariamente.</b> A medida protetiva pode determinar que o <b>agressor</b> 
+          seja afastado do lar. Você tem direito a permanecer na sua casa com seus filhos. 
+          Somente em casos onde sua segurança não possa ser garantida, pode ser oferecido abrigo temporário.
         </p>
       </details>
       <details>
-        <summary>O que acontece depois da denúncia?</summary>
+        <summary>E se eu não tiver provas da violência?</summary>
         <p class="answer">
-          A denúncia é encaminhada aos órgãos competentes (Conselho Tutelar, Ministério Público, etc.) que irão 
-          <b>verificar a situação</b> e tomar as medidas de proteção necessárias. O denunciante pode acompanhar 
-          o andamento pelo protocolo gerado.
+          Você pode e deve denunciar mesmo sem "provas" materiais. Seu relato é importante 
+          e será considerado. Porém, se possível, guarde mensagens ameaçadoras, fotos de lesões 
+          (com data), laudos médicos e nomes de testemunhas. Isso pode ajudar no processo.
+        </p>
+      </details>
+      <details>
+        <summary>A denúncia pode ser anônima?</summary>
+        <p class="answer">
+          <b>Sim.</b> Você pode fazer uma denúncia anônima pelo <b>Ligue 180</b>. 
+          Porém, para algumas medidas de proteção, pode ser necessário que a vítima 
+          faça o registro presencial. A ligação para o 180 é sigilosa e não aparece na conta telefônica.
+        </p>
+      </details>
+      <details>
+        <summary>Posso retirar a denúncia depois?</summary>
+        <p class="answer">
+          Para crimes de lesão corporal, a ação penal é pública e não pode ser retirada pela vítima. 
+          Para outros casos, existe a possibilidade de renúncia, mas isso deve ser feito perante o juiz, 
+          em audiência, para garantir que não há pressão do agressor. <b>Pense bem antes de desistir</b> — 
+          o ciclo de violência tende a se repetir e se agravar.
         </p>
       </details>
     </section>
@@ -1235,7 +1567,8 @@
         <div class="card">
           <h3>📋 Transparência</h3>
           <p>
-            Este site é um <b>protótipo acadêmico</b> desenvolvido como atividade extensionista para fins de apresentação de TCC.
+            Este site é um <b>protótipo acadêmico</b> desenvolvido como atividade extensionista 
+            para fins de apresentação de TCC.
           </p>
           <p style="margin-top:12px">
             Em um produto real, seriam aplicadas:
@@ -1243,8 +1576,8 @@
           <ul class="list">
             <li>Conformidade com a <b>LGPD</b> (Lei de Proteção de Dados)</li>
             <li><b>Criptografia</b> e segurança das informações</li>
-            <li>Auditoria e <b>encaminhamento responsável</b></li>
-            <li>Integração com sistemas oficiais da rede de proteção</li>
+            <li>Modo de <b>navegação segura</b> (botão de saída rápida)</li>
+            <li>Integração com a <b>rede de proteção oficial</b></li>
           </ul>
         </div>
       </div>
@@ -1252,20 +1585,22 @@
 
     <footer>
       <div>
-        <b>🛡️ Rede Protege</b> — Protótipo acadêmico (atividade extensionista)
+        <b>💜 Rede Acolhe</b> — Protótipo acadêmico (atividade extensionista)
       </div>
       <div class="footer-links">
-        <a href="#eca">ECA</a>
-        <a href="#conselho">Conselho Tutelar</a>
-        <a href="#ajuda">Pedir ajuda</a>
-        <a href="#acoes">Ações</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#tipos">Tipos</a>
+        <a href="#ajuda">Ajuda</a>
+        <a href="#direitos">Direitos</a>
+        <a href="#rede">Rede de Apoio</a>
         <a href="#contato">Contato</a>
       </div>
       <div style="margin-top:20px; font-size:12px">
-        <b>Referências:</b> ECA (Lei nº 8.069/1990 — Portal do Planalto), Disque 100 (Governo Federal), Ligue 180 (Governo Federal).
+        <b>Referências:</b> Lei Maria da Penha (Lei nº 11.340/2006), Ligue 180 (Governo Federal), 
+        Secretaria Nacional de Políticas para as Mulheres.
       </div>
       <div style="margin-top:12px; font-size:11px; color:var(--muted)">
-        © 2024 — Desenvolvido com 💜 para proteção da infância e adolescência
+        © 2024 — Desenvolvido com 💜 pela proteção e dignidade das mulheres
       </div>
     </footer>
   </main>
@@ -1299,7 +1634,7 @@
       });
     });
     
-    // Mobile menu toggle (simplified)
+    // Mobile menu toggle
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('nav');
     
@@ -1310,7 +1645,7 @@
         nav.style.top = '100%';
         nav.style.left = '0';
         nav.style.right = '0';
-        nav.style.background = 'rgba(10,15,30,.95)';
+        nav.style.background = 'rgba(26,10,16,.95)';
         nav.style.padding = '16px';
         nav.style.flexDirection = 'column';
         nav.style.borderRadius = '0 0 16px 16px';
